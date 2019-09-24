@@ -6,6 +6,11 @@ var url = connStr;
 
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
-  console.log("Database created!");
-  db.close();
+  var dbo = db.db("mydb");
+  var doc = { name: "Benjamin Kleeman", address: "1234 W. Pleasant Blvd." };
+  dbo.collection("students").insertOne(doc, function(err, res) {
+    if (err) throw err;
+    console.log("1 document inserted");
+    db.close();
+  });
 });

@@ -6,6 +6,10 @@ var url = connStr;
 
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
-  console.log("Database created!");
-  db.close();
+  var dbo = db.db("mydb");
+  dbo.collection("students").findOne({}, function(err, result) {
+    if (err) throw err;
+    console.log(result.name);
+    db.close();
+  });
 });
