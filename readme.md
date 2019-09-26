@@ -4,7 +4,7 @@ A set of boilerplate MongoDB utility scripts based off of those fround on the w3
 
 ## Author
 
-* **Benjamin Kleeman** - [bkleeman](https://github.com/bkleeman)
+* **Benjamin Kleeman** - [bkleeman](https://bkleeman.github.io)
 
 ## License
 
