@@ -8,9 +8,9 @@ var url = connStr;
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
   var dbo = db.db("mydb");
-  dbo.collection("students").findOne({}, function(err, result) {
+  dbo.collection("students").find({}).toArray(function(err, result) {
     if (err) throw err;
-    console.log(result.name);
+    console.log(result);
     db.close();
   });
 });
